@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bwf.landz">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+
+        <!-- 启动页 -->
+        <activity android:name=".ui.welcome.WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- exported 意思是activity或者service是否可以被其他app所调用，默认是false -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.welcome.GuidActivity"
+            android:launchMode="standard"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!-- +++++++++++++++++测试+++++++++++++++++ -->
+        <activity
+            android:name=".test.Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!-- process 给service新增进程 :remote需要服务的时候才创建service -->
+        <service
+            android:name=".test.MyService"
+            android:process=":remote" />
+
+        <activity
+            android:name=".ui.online.OnLineHouseActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.online.SelectMoreActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.search.SearchActivity" />
+        <activity android:name=".ui.online.HouseOneDetailActivity" />
+        <activity android:name=".ui.online.OneHouseMoreActivity" />
+        <activity android:name=".ui.guwen.TakeLookHistoryActivity" />
+        <activity
+            android:name=".ui.online.LookPhotoActivity"
+            android:label="@string/title_activity_look_photo"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.online.JianShangActivity"
+            android:label="@string/title_activity_jian_shang"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.online.DaizuActivity"
+            android:label="@string/title_activity_daizu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.online.OnehandActivity"
+            android:label="@string/title_activity_onehand"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.online.FindHouseToMapActivity"
+            android:label="@string/title_activity_find_house_to_map"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.online.YanJiuActivity"
+            android:label="@string/title_activity_yan_jiu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.online.GuWenActivity"
+            android:label="@string/title_activity_gu_wen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.online.MyHouseActivity"
+            android:label="@string/title_activity_my_house"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+    </application>
+
+</manifest>
